@@ -6,12 +6,12 @@
 ##		raise TypeError("Only integers are allowed")
 ##	return a**b
 
-def puissance (a,b):
+def puissance (a,b) :
 	if b==0:
 		return 1
 	if b >0:
 		for i in range(1,b):
 			a= a*b
 		return a
-	if b<0:
+	else:
 		return 1/puissance (a,-b)
