@@ -7,12 +7,16 @@
 ##	return a**b
 
 def puissance (a,b) :
-	if b==0:
-		return 1
-	elif b >0:
-		resultat = a
-		for _ in range(1,b):
-			resultat *= a
-		return resultat
+	if not type(a) is int:
+		if not type(b)is int:
+			a**b
 	else:
-		return 1/puissance (a,-b)
+		if b==0:
+			return 1
+		elif b >0:
+			resultat = a
+			for _ in range(1,b):
+				resultat *= a
+			return resultat
+		else:
+			return 1/puissance (a,-b)
