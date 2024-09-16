@@ -14,4 +14,4 @@ def puissance (a,b):
 			a= a*b
 		return a
 	if b<0:
-	return 1/puissance (a,-b)
+		return 1/puissance (a,-b)
