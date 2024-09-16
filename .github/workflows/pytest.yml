@@ -11,3 +11,7 @@ jobs:
         run : pip3 install pytest
       - name: lancer test
         run : python3 -m pytest TP01/test.py
+      - name: affichage nom branche
+        run : echo "Nom branche:${{github.ref}}"
+      - name: affichage OS
+        run : echo "Nom OS:${{github.platform}}"
