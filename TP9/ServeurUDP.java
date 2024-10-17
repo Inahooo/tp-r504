@@ -12,6 +12,7 @@ public class ServeurUDP {
             sock.receive(packet);
             String str = new String(packet.getData());
             System.out.println("str=" + str);
+            sock.send(packet);
         }
     }
 }

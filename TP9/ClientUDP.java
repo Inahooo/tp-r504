@@ -11,8 +11,9 @@ import java.net.*;
             DatagramPacket packet = new DatagramPacket( data, data.length, addr, 1234);
             DatagramSocket sock = new DatagramSocket();
             sock.send(packet);
-            sock.close();
-        
+            sock.receive();
+                System.out.println();
+                sock.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }    
