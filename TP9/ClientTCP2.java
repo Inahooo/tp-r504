@@ -5,7 +5,7 @@ import java.net.*;
             try {
                 Socket socket = new Socket( "localhost", 2016);
                 DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
-                dOut.writeUTF("args[0]");
+                dOut.writeUTF( args[0] );
                 socket.close();
             } catch (IOException e){
                 e.printStackTrace();
