@@ -11,11 +11,8 @@ db_config = {
     'database': 'demosql',
 	'port': '3306'
 }
-
-# Initialize MySQL connection
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor() 
-
 
 @app.route('/')
 def index():
@@ -24,9 +21,6 @@ def index():
     cursor.execute(query)
     data = cursor.fetchall()
     
-    # Close the cursor and connection
-    cursor.close()
-    conn.close()
     
     return render_template('index.html', data=data)
 
