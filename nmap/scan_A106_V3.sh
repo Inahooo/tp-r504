@@ -9,21 +9,21 @@ output_file="scan-result_3.csv"
 # Initialiser le fichier CSV avec les en-têtes
 echo "IP, TCP_port_open, UDP_port_open, Linux_kernel_version" > "$output_file"
 
-# Étape 1: Effectuer un scan Nmap pour trouver les machines actives
+#Effectuer un scan Nmap pour trouver les machines actives
 echo "Début du scan des machines actives..."
 active_ips=$(nmap -sn "$subnet" | grep "Nmap scan report" | awk '{print $5}')
 
-# Étape 2: Pour chaque machine active, effectuer un deuxième scan pour trouver les ports ouverts
+#Pour chaque machine active, effectuer un deuxième scan pour trouver les ports ouverts
 for ip in $active_ips; do
     echo "Scan des ports ouverts sur $ip..."
     
     # Scan port tcp
     tcp_open_ports=$(nmap -sT -F "$ip" | grep "open" | wc -l)
 	
-    # Scan port tcp
+    # Scan port UDP
     udp_open_ports=$(nmap -sU -F "$ip" | grep "open" | wc -l)
 
-    # Scan pour la version du kernel Linux
+    # Scan version kernel Linux
     kernel_version=$(nmap -O "$ip" | grep "OS details" | awk -F: '{print $2}' | sed 's/^[ \t]*//g')
 
     
