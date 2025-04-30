@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === Variables ===
-QUEUE_NAME="mafile"
+QUEUE_NAME="queue"
 BURST_SIZE=1000
 BURST_DELAY=3  # secondes
 REDIS_CLI="redis-cli"
